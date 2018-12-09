@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+project(1025)
+
+#set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_STANDARD 11)
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_DIRS})
+file(GLOB_RECURSE ALL_UTIL_SRCS "offer/Utilities/*.cpp")
+include_directories(pro)
+include_directories(offer/Utilities/)
+#add_executable(1025 baidu.cpp)
+#add_executable(1025 leetcode/350.cpp)
+add_executable(1025  ${ALL_UTIL_SRCS} offer/set_test.cpp)
+#add_executable(1025 feature/HOG.cpp)
+#add_executable(1025 santang.cpp)
+target_link_libraries(1025 ${OpenCV_LIBS})
